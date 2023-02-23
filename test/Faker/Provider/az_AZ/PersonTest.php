@@ -10,7 +10,6 @@ use Faker\Test\TestCase;
  */
 final class PersonTest extends TestCase
 {
-
     public function testFin(): void
     {
         for ($i = 0; $i < 100; ++$i) {

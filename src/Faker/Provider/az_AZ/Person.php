@@ -31,10 +31,10 @@ class Person extends \Faker\Provider\Person
      * @var array Azerbaijani first names.
      */
     protected static $firstNameMale = [
-        "Abbas", "Adəm", "Adil", "Ayxan", "Azər", "Babək", "Bayraqdar", "Bayram", "Cabbar", "Cabir", "Cahangir",
-        "Cahid", "Cəfər", "Cəlal", "Cəlil", "Elman", "Elmin", "Emi̇l", "Əhməd", "Əziz", "Fəri̇d", "Həsən",
-        "İbrahim", "İlham", "İlqar", "İslam", "Kamal", "Kənan", "Məhəmməd", "Məmməd", "Murad", "Nadir",
-        "Nahid", "Rasim", "Rauf", "Rəsul", "Tural", "Ümi̇d", "Vasif", "Zaur", "Ziya",
+        'Abbas', 'Adəm', 'Adil', 'Ayxan', 'Azər', 'Babək', 'Bayraqdar', 'Bayram', 'Cabbar', 'Cabir', 'Cahangir',
+        'Cahid', 'Cəfər', 'Cəlal', 'Cəlil', 'Elman', 'Elmin', 'Emil', 'Əhməd', 'Əziz', 'Fərid', 'Həsən',
+        'Ibrahim', 'Ilham', 'Ilqar', 'Islam', 'Kamal', 'Kənan', 'Məhəmməd', 'Məmməd', 'Murad', 'Nadir',
+        'Nahid', 'Rasim', 'Rauf', 'Rəsul', 'Tural', 'Ümid', 'Vasif', 'Zaur', 'Ziya',
     ];
 
     /**
@@ -43,8 +43,8 @@ class Person extends \Faker\Provider\Person
      * @var array Azerbaijani first names.
      */
     protected static $firstNameFemale = [
-        "Ayan", "Ayla", "Banu", "Cahan", "Dilarə", "Fi̇dan", "Gülay", "Günay", "Günel", "İnci̇", "Leyla", "Natəvan",
-        "Nazli", "Nəzri̇n", "Nigar", "Ni̇lay", "Nuray", "Samirə", "Səma", "Vəfa",
+        'Ayan', 'Ayla', 'Banu', 'Cahan', 'Dilarə', 'Fidan', 'Gülay', 'Günay', 'Günel', 'İnci̇', 'Leyla', 'Natəvan',
+        'Nazlı', 'Nəzrin', 'Nigar', 'Nilay', 'Nuray', 'Samirə', 'Səma', 'Vəfa',
     ];
 
     /**
@@ -53,7 +53,7 @@ class Person extends \Faker\Provider\Person
      * @var array Azerbaijani last names.
      */
     protected static $lastName = [
-        'Memmedov', 'Abbas', 'Cəlil'
+        'Məmməd', 'Abbas', 'Cəlil', 'Qulu', 'Cəfər', 'Ibrahim', 'Murad',
     ];
 
     protected static array $title = ['Doç. Dr.', 'Dr.', 'Prof. Dr.'];
@@ -85,15 +85,16 @@ class Person extends \Faker\Provider\Person
      * @see https://www.e-gov.az/ru/news/read/422
      * FIN consists of exactly 7 characters
      * that are all uppercase English letters except "I" and "O" and digits from 0 to 9.
-     *
      */
     public function fin(): string
     {
         $characters = 'ABCDEFGHJKLMNPQRSTUVWXYZ0123456789';
         $fin = '';
-        for ($i = 0; $i < 7; $i++) {
-            $fin .= $characters[rand(0, strlen($characters) - 1)];
+
+        for ($i = 0; $i < 7; ++$i) {
+            $fin .= $characters[mt_rand(0, strlen($characters) - 1)];
         }
+
         return $fin;
     }
 

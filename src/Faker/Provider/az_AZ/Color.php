@@ -11,5 +11,4 @@ class Color extends \Faker\Provider\Color
         'qara', 'qırmızı', 'sarı', 'mavi', 'narıncı',
         'yaşıl', 'bənövşəyi', 'gümüş', 'boz', 'çəhrayı',
     ];
-
 }
